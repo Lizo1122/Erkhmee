@@ -1,0 +1,43 @@
+start:
+TextWindow.clear()
+round2 = 10
+round = 0 
+number2 = Math.GetRandomNumber(100)
+TextWindow.title = "guess My Number"
+TextWindow.ForegroundColor = "green"
+TextWindow.Write("")
+TextWindow.WriteLine("my number is less than 100")
+TextWindow.WriteLine("you have "+ round2+ "rounds")
+begin:
+TextWindow.Write("whats my number?")
+number=TextWindow.ReadNumber()
+if number = number2 then
+    TextWindow.WriteLine("you won")
+    TextWindow.WriteLine("would you like play again y,n")
+    playagain=TextWindow.Read()
+    if playagain="y"then 
+        GoTo start
+        
+    else
+        Program.End()
+  EndIf
+else 
+    if number<number2 then
+        textwindow.WriteLine("too small")
+    else
+        TextWindow.WriteLine("too high")
+EndIf
+EndIf
+If (round2-round)-1>1 Then
+    round3 = "round"
+else 
+    round3="round"
+EndIf
+TextWindow.WriteLine("you have "+((round2-round)-1)+""+round3 + "left")
+round=round1
+if round< round2 then
+    GoTo begin
+else 
+    TextWindow.WriteLine("you have run out of rounds")
+    TextWindow.WriteLine("would you like to play again y\n")
+    EndIf
